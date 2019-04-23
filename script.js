@@ -15,28 +15,24 @@ audioEls.forEach(function(audioEl){
 		const el = document.querySelector(`.key[data-keycode="${keyCode}"`);
 		const className = el.className;
 		el.className = className + ' playing';
+		console.log('playing event triggered');
 	});
 	audioEl.addEventListener('ended', function(e){
 		const keyCode = e.target.dataset.keycode;
 		const el = document.querySelector(`.key[data-keycode="${keyCode}"`);
 		el.className = el.className.replace(' playing', '');
+		console.log('ended event triggered');
 	});
 });
 
-document.addEventListener('keydown', function(e){
-	switch (e.keyCode) {
-		case 65:
-			console.log('hey');
-			aAudioEl.play();
-			break;
-		default:
-			console.log('invalid key');
-
-	}
+window.addEventListener('keydown', function(e){
+	const audio = document.querySelector(`audio[data-keycode="${e.keyCode}"`);
+	if(!audio) return;
+	audio.play();
 });
 
 
-
+// Keycodes
 // A - 65
 // S - 83
 // D - 68
