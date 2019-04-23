@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="drum-kit-container">
-		<div class="key">
+		<div class="key" data-keycode="65">
 			<kbd>A</kbd>
 			<span class="sound">Clap</span>
 		</div>
@@ -38,10 +38,12 @@
 			<span class="sound">Tom</span>
 		</div>
 		<div class="key">
-			<kbd>M</kbd>
+			<kbd>;</kbd>
 			<span class="sound">Tink</span>
 		</div>
 	</div>
+
+	<audio src="sounds/clap.wav" data-keycode="65"></audio>
 	<script src="script.js"></script>
 </body>
 </html>
